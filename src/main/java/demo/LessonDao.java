@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LessonDao {
-    private final Connection connection = new DataBaseConnection().getConnection();
+    private  Connection connection;
+
+    public LessonDao(Connection connection) {
+        this.connection = connection;
+    }
 
     public void addLesson(Lesson lesson) {
         addHomeWork(lesson);
